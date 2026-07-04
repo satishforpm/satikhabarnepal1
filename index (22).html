@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatiKhabar | नेपालको भरपर्दो समाचार पोर्टल</title>
+
+<meta name="description" content="SatiKhabar — राजनीति, अर्थतन्त्र, खेलकुद, स्थानीय र अन्तर्राष्ट्रिय समाचार एकै ठाउँमा।">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://satikhabar.netlify.app/">
+
+<meta property="og:locale" content="ne_NP">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SatiKhabar">
+<meta property="og:title" content="SatiKhabar | नेपालको भरपर्दो समाचार पोर्टल">
+<meta property="og:description" content="SatiKhabar — राजनीति, अर्थतन्त्र, खेलकुद, स्थानीय र अन्तर्राष्ट्रिय समाचार एकै ठाउँमा।">
+<meta property="og:url" content="https://satikhabar.netlify.app/">
+<meta property="og:image" content="https://satikhabar.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="fb:app_id" content="YOUR_FB_APP_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SatiKhabar | नेपालको भरपर्दो समाचार पोर्टल">
+<meta name="twitter:description" content="SatiKhabar — राजनीति, अर्थतन्त्र, खेलकुद, स्थानीय र अन्तर्राष्ट्रिय समाचार एकै ठाउँमा।">
+<meta name="twitter:image" content="https://satikhabar.netlify.app/og-image.jpg">
+
+<meta name="theme-color" content="#C0272D">
+<meta name="color-scheme" content="light">
+<meta name="author" content="SatiKhabar">
+
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json" id="jsonld-schema">
+{
+ "@context":"https://schema.org",
+ "@type":"NewsMediaOrganization",
+ "name":"SatiKhabar",
+ "url":"https://satikhabar.netlify.app/",
+ "logo":{"@type":"ImageObject","url":"https://satikhabar.netlify.app/logo.png"},
+ "sameAs":[]
+}
+</script>
+
+<style>
+  :root{
+    --sindoor:#C0272D;
+    --sindoor-dark:#901D22;
+    --ink:#1A1613;
+    --parchment:#F7F3EC;
+    --parchment-deep:#EFE8DA;
+    --marigold:#E8A93B;
+    --slate:#6B6660;
+    --himal:#2C4A63;
+    --line:rgba(26,22,19,0.14);
+    --display:'Noto Serif Devanagari',serif;
+    --body-font:'Noto Sans Devanagari',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:var(--body-font);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .garland{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    margin:0 auto;padding:6px 0;user-select:none;
+  }
+  .garland span{
+    width:6px;height:6px;border-radius:50%;background:var(--marigold);
+    box-shadow:0 0 0 2px rgba(232,169,59,0.18);
+  }
+  .garland span:nth-child(3n){background:var(--sindoor);box-shadow:0 0 0 2px rgba(192,39,45,0.15);}
+
+  .topbar{background:var(--ink);color:var(--parchment-deep);font-family:var(--mono);font-size:12px;letter-spacing:.02em;}
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:7px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+  .topbar-inner .tag{color:var(--marigold);}
+
+  .masthead{text-align:center;padding:30px 20px 14px;background:var(--parchment);border-bottom:1px solid var(--line);}
+  .masthead h1{font-family:var(--display);font-weight:700;font-size:clamp(42px,7vw,68px);margin:0;letter-spacing:-.01em;color:var(--ink);}
+  .masthead h1 span{color:var(--sindoor);}
+  .masthead .tagline{font-size:13px;color:var(--slate);margin-top:4px;font-family:var(--mono);letter-spacing:.04em;}
+
+  nav{position:sticky;top:0;z-index:20;background:var(--parchment);border-bottom:2px solid var(--ink);}
+  .nav-inner{max-width:1180px;margin:0 auto;display:flex;overflow-x:auto;padding:0 20px;}
+  .nav-inner::-webkit-scrollbar{display:none;}
+  .nav-btn{flex:none;padding:13px 16px;font-size:14.5px;font-weight:600;color:var(--ink);border-bottom:3px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--body-font);white-space:nowrap;}
+  .nav-btn.active{color:var(--sindoor);border-bottom-color:var(--sindoor);}
+  .nav-btn:hover{color:var(--sindoor);}
+
+  main{max-width:1180px;margin:0 auto;padding:28px 20px 60px;}
+
+  .hero{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;margin-bottom:10px;}
+  .tag-pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--sindoor);padding:3px 9px;border-radius:2px;margin-bottom:10px;}
+  .tag-pill.blue{background:var(--himal);}
+  .tag-pill.gold{background:var(--marigold);color:var(--ink);}
+
+  .story-feature{cursor:pointer;}
+  .story-feature .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--parchment-deep);border:1px solid var(--line);margin-bottom:14px;}
+  .story-feature .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .story-feature:hover .thumb img{transform:scale(1.04);}
+  .story-feature h2{font-family:var(--display);font-size:clamp(24px,3vw,34px);line-height:1.25;margin:0 0 10px;font-weight:600;}
+  .story-feature p.summary{color:var(--slate);font-size:15.5px;line-height:1.65;margin:0 0 10px;}
+  .meta-row{display:flex;gap:14px;font-family:var(--mono);font-size:11.5px;color:var(--slate);}
+
+  .side-list{display:flex;flex-direction:column;}
+  .side-item{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);cursor:pointer;}
+  .side-item:first-child{border-top:none;}
+  .side-item .thumb{flex:none;width:96px;aspect-ratio:4/3;overflow:hidden;background:var(--parchment-deep);border:1px solid var(--line);}
+  .side-item .thumb img{width:100%;height:100%;object-fit:cover;}
+  .side-item h3{font-family:var(--display);font-size:16.5px;line-height:1.35;margin:0 0 6px;font-weight:600;}
+  .side-item:hover h3{color:var(--sindoor);}
+
+  .section{margin-top:36px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .section-head h2{font-family:var(--display);font-size:22px;margin:0;font-weight:700;color:var(--ink);white-space:nowrap;}
+  .section-head .rule{flex:1;height:1px;background:var(--line);}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card{cursor:pointer;}
+  .card .thumb{aspect-ratio:4/3;overflow:hidden;background:var(--parchment-deep);border:1px solid var(--line);margin-bottom:10px;}
+  .card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .card:hover .thumb img{transform:scale(1.04);}
+  .card h3{font-family:var(--display);font-size:17.5px;line-height:1.35;margin:0 0 8px;font-weight:600;}
+  .card:hover h3{color:var(--sindoor);}
+  .card .summary{font-size:13.5px;color:var(--slate);line-height:1.55;margin:0 0 8px;}
+
+  .article-view{max-width:760px;margin:0 auto;}
+  .back-btn{font-family:var(--mono);font-size:12.5px;color:var(--sindoor);background:none;border:1px solid var(--sindoor);padding:6px 12px;cursor:pointer;margin-bottom:22px;border-radius:2px;}
+  .back-btn:hover{background:var(--sindoor);color:#fff;}
+  .article-view h1{font-family:var(--display);font-size:clamp(26px,4vw,38px);line-height:1.3;margin:12px 0;font-weight:700;}
+  .article-view .article-thumb{aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);margin-bottom:20px;background:var(--parchment-deep);}
+  .article-view .article-thumb img{width:100%;height:100%;object-fit:cover;}
+  .article-view .body-text p{font-size:16.5px;line-height:1.9;color:#2A2521;margin-bottom:18px;}
+  .article-toolbar{display:flex;justify-content:space-between;align-items:center;padding-top:18px;margin-top:26px;border-top:1px solid var(--line);}
+  .share-btn{font-family:var(--mono);font-size:12px;background:var(--ink);color:var(--parchment);border:none;padding:8px 14px;cursor:pointer;border-radius:2px;}
+  .share-btn:hover{background:var(--sindoor);}
+
+  footer{background:var(--ink);color:var(--parchment-deep);padding:36px 20px 24px;margin-top:50px;}
+  .footer-inner{max-width:1180px;margin:0 auto;text-align:center;}
+  .footer-inner .fname{font-family:var(--display);font-size:26px;color:#fff;}
+  .footer-inner p{font-family:var(--mono);font-size:12px;color:var(--slate);margin-top:10px;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr;}
+    .side-item .thumb{width:76px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;scroll-behavior:auto !important;}
+  }
+  :focus-visible{outline:2px solid var(--sindoor);outline-offset:2px;}
+
+  .admin-link{font-family:var(--mono);font-size:11px;color:var(--slate);background:none;border:1px solid var(--slate);padding:4px 10px;cursor:pointer;border-radius:2px;margin-top:14px;opacity:.7;}
+  .admin-link:hover{opacity:1;color:var(--parchment);border-color:var(--parchment);}
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(26,22,19,0.6);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px;}
+  .modal-box{background:var(--parchment);border:1px solid var(--line);border-radius:4px;max-width:420px;width:100%;padding:26px;box-shadow:0 10px 40px rgba(0,0,0,.25);position:relative;max-height:88vh;overflow-y:auto;}
+  .modal-box.wide{max-width:640px;}
+  .modal-box h2{font-family:var(--display);margin:0 0 16px;font-size:22px;}
+  .modal-box label{display:block;font-family:var(--mono);font-size:11.5px;color:var(--slate);margin:12px 0 5px;}
+  .modal-box input,.modal-box select,.modal-box textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:2px;font-family:var(--body-font);font-size:14px;background:#fff;color:var(--ink);}
+  .modal-box textarea{resize:vertical;min-height:90px;}
+  .modal-actions{display:flex;gap:10px;margin-top:18px;}
+  .btn-primary{background:var(--sindoor);color:#fff;border:none;padding:9px 16px;border-radius:2px;cursor:pointer;font-family:var(--body-font);font-weight:600;font-size:14px;}
+  .btn-primary:hover{background:var(--sindoor-dark);}
+  .btn-ghost{background:none;border:1px solid var(--line);color:var(--ink);padding:9px 16px;border-radius:2px;cursor:pointer;font-family:var(--body-font);font-size:14px;}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .modal-error{color:var(--sindoor);font-size:13px;margin-top:10px;font-family:var(--mono);}
+  .modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--slate);}
+
+  .admin-bar{position:sticky;top:0;z-index:19;background:var(--himal);color:#fff;font-family:var(--mono);font-size:12.5px;display:flex;justify-content:space-between;align-items:center;padding:8px 20px;}
+  .admin-bar .abar-actions{display:flex;gap:8px;}
+  .admin-bar button{font-family:var(--mono);font-size:12px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.4);padding:5px 11px;border-radius:2px;cursor:pointer;}
+  .admin-bar button:hover{background:rgba(255,255,255,0.28);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span id="todayDate"></span>
+    <span class="tag">भरपर्दो समाचार, हरेक क्षण</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <h1>Sati<span>Khabar</span></h1>
+  <div class="tagline">नेपालको भरपर्दो समाचार पोर्टल</div>
+</header>
+
+<div class="garland" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<nav>
+  <div class="nav-inner" id="navInner"></div>
+</nav>
+
+<main id="mainContent"></main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="fname">SatiKhabar</div>
+    <p>© <span id="year"></span> SatiKhabar &nbsp;·&nbsp; राजनीति · अर्थतन्त्र · खेलकुद · स्थानीय · अन्तर्राष्ट्रिय</p>
+    <button class="admin-link" onclick="openLoginModal()">Admin</button>
+  </div>
+</footer>
+
+<div id="modalRoot"></div>
+
+<script>
+const CATEGORIES = ["सबै","राजनीति","अर्थतन्त्र","खेलकुद","स्थानीय","अन्तर्राष्ट्रिय"];
+
+const NEWS = [
+  {
+    id:1,
+    category:"राजनीति",
+    title:"संसदको बजेट अधिवेशन आजबाट सुरु, आर्थिक सुधारका विधेयकमाथि छलफल हुने",
+    summary:"आगामी आर्थिक वर्षको बजेट तथा सार्वजनिक खर्च सुधार सम्बन्धी विधेयकहरूमाथि यस अधिवेशनमा प्राथमिकताका साथ छलफल हुने जनाइएको छ।",
+    body:[
+      "काठमाडौं — संघीय संसदको बजेट अधिवेशन आजदेखि सुरु भएको छ। अधिवेशनको पहिलो चरणमा आर्थिक सुधार तथा सार्वजनिक खर्च व्यवस्थापनसँग सम्बन्धित विधेयकहरू प्रस्तुत गरिने योजना रहेको सचिवालयले जनाएको छ।",
+      "अर्थ समितिका सभापतिका अनुसार यस पटकको छलफलमा राजस्व संकलन प्रणाली चुस्त बनाउने र स्थानीय तहमा बजेट कार्यान्वयनको अनुगमन थप प्रभावकारी बनाउने विषयलाई प्राथमिकता दिइने छ।",
+      "प्रमुख दलहरूले अधिवेशनलाई सहज बनाउन सहमति जनाएका छन् भने विपक्षी सांसदहरूले महँगी नियन्त्रण र रोजगारीका विषयमा सरकारको ध्यानाकर्षण गराउने बताएका छन्।"
+    ],
+    reporter:"राम बहादुर श्रेष्ठ",
+    publishDate:"2026-07-03",
+    featuredImage:"https://images.unsplash.com/photo-1523995462485-3387ff173a2c?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:2,
+    category:"अर्थतन्त्र",
+    title:"नेपाल राष्ट्र बैंकले ब्याजदर स्थिर राख्ने घोषणा गर्यो, बजारमा राहतको सास्",
+    summary:"केन्द्रीय बैंकले चालु त्रैमासिक मौद्रिक नीति समीक्षामा नीतिगत दर यथावत राख्ने निर्णय गरेको छ, जसले बैंकिङ क्षेत्रमा स्थिरता ल्याउने विश्लेषकहरूको भनाइ छ।",
+    body:[
+      "काठमाडौं — नेपाल राष्ट्र बैंकले आफ्नो त्रैमासिक मौद्रिक नीति समीक्षामा नीतिगत ब्याजदरलाई हालको स्तरमै कायम राख्ने निर्णय गरेको छ।",
+      "बैंकका अनुसार मुद्रास्फीति नियन्त्रणमा रहेको र बैंकिङ प्रणालीमा तरलताको अवस्था सन्तोषजनक भएकाले हाल दर परिवर्तन गर्नु आवश्यक नठानिएको हो।",
+      "व्यापारिक महासंघले यस निर्णयलाई स्वागत गर्दै लगानीकर्ताको मनोबल बढाउने बताएको छ, जबकि केही अर्थविद्हरूले निजी क्षेत्रमा कर्जा प्रवाह अझै विस्तार गर्नुपर्ने सुझाव दिएका छन्।"
+    ],
+    reporter:"सुनिता आचार्य",
+    publishDate:"2026-07-03",
+    featuredImage:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:3,
+    category:"खेलकुद",
+    title:"राष्ट्रिय फुटबल टिम एसियाली छनोट खेलका लागि दोहा प्रस्थान",
+    summary:"आगामी हप्ता हुने महत्वपूर्ण खेलका लागि नेपाली टिम पूर्ण तयारीका साथ कतार प्रस्थान गरेको छ।",
+    body:[
+      "काठमाडौं — राष्ट्रिय पुरुष फुटबल टिम एसियाली छनोट खेलमा भाग लिन आज बिहान कतारको दोहाका लागि प्रस्थान गर्यो।",
+      "प्रशिक्षकका अनुसार टिमले विगत तीन साता काठमाडौंमा गहन अभ्यास गरेको छ र खेलाडीहरूको मनोबल उच्च रहेको बताइएको छ।",
+      "फुटबल संघले खेलको प्रत्यक्ष प्रसारणको व्यवस्था मिलाइएको र आम दर्शकलाई टिमलाई साथ दिन आग्रह गरेको छ।"
+    ],
+    reporter:"विकास थापा",
+    publishDate:"2026-07-02",
+    featuredImage:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:4,
+    category:"स्थानीय",
+    title:"पोखरामा सडक स्तरोन्नति अभियान सुरु, यातायातमा अस्थायी असर",
+    summary:"महानगरपालिकाले सुरु गरेको सडक स्तरोन्नति कार्यले केही मार्गमा सवारी चापमा असर पर्ने जनाइएको छ।",
+    body:[
+      "पोखरा — पोखरा महानगरपालिकाले शहरका प्रमुख सडकहरूको स्तरोन्नति गर्ने अभियान आजदेखि सुरु गरेको छ।",
+      "अभियानअन्तर्गत झोलुंगे पुल क्षेत्र हुँदै लेकसाइडसम्मको सडकमा ढलान तथा साइड ड्रेन निर्माणको काम अगाडि बढाइने भएको छ।",
+      "यस क्रममा केही दिन सवारी साधनको आवतजावतमा अस्थायी असर पर्ने भएकाले स्थानीयवासीलाई वैकल्पिक मार्ग प्रयोग गर्न महानगरपालिकाले आग्रह गरेको छ।"
+    ],
+    reporter:"पूजा गुरुङ",
+    publishDate:"2026-07-01",
+    featuredImage:"https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:5,
+    category:"अन्तर्राष्ट्रिय",
+    title:"जलवायु सम्मेलनमा दिगो ऊर्जा लगानी बढाउने प्रतिबद्धता",
+    summary:"विश्वका धेरै मुलुकले नवीकरणीय ऊर्जामा लगानी दोब्बर बनाउने प्रतिबद्धता जनाएका छन्।",
+    body:[
+      "जेनेभा — चालु जलवायु सम्मेलनमा सहभागी मुलुकहरूले आगामी दशकभित्र नवीकरणीय ऊर्जामा हुने लगानी उल्लेख्य रूपमा बढाउने प्रतिबद्धता जनाएका छन्।",
+      "सम्मेलनमा साना तथा विकासशील मुलुकहरूले प्रविधि हस्तान्तरण र वित्तीय सहयोग थप पारदर्शी बनाउन माग गरेका छन्।",
+      "विज्ञहरूका अनुसार यो प्रतिबद्धता कार्यान्वयनमा आउन सके विश्वव्यापी कार्बन उत्सर्जन घटाउने लक्ष्यमा उल्लेखनीय योगदान पुग्नेछ।"
+    ],
+    reporter:"अनिल कार्की",
+    publishDate:"2026-06-30",
+    featuredImage:"https://images.unsplash.com/photo-1497436072909-f5e4be1713c2?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:6,
+    category:"अर्थतन्त्र",
+    title:"चाडपर्व सिजनमा रेमिट्यान्स भित्रिने क्रम बढ्यो",
+    summary:"आगामी चाडपर्वको सिजन नजिकिँदै गर्दा वैदेशिक रोजगारीमा रहेका नेपालीहरूबाट पठाइने रकम बढेको तथ्यांकले देखाएको छ।",
+    body:[
+      "काठमाडौं — चाडपर्वको मुखमा वैदेशिक रोजगारीमा रहेका नेपालीहरूले स्वदेश पठाउने रकमको परिमाण उल्लेख्य रूपमा बढेको बैंकिङ क्षेत्रको तथ्यांकले देखाएको छ।",
+      "यसले वैदेशिक मुद्रा सञ्चितिमा सकारात्मक प्रभाव पारेको र आन्तरिक उपभोगमा समेत बढोत्तरी ल्याउने अपेक्षा गरिएको छ।",
+      "अर्थविद्हरूले भने यो प्रवृत्ति दिगो बनाउन उत्पादनमूलक क्षेत्रमा लगानी प्रवर्द्धन गर्नुपर्ने सुझाव दिएका छन्।"
+    ],
+    reporter:"सुनिता आचार्य",
+    publishDate:"2026-06-29",
+    featuredImage:"https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:7,
+    category:"खेलकुद",
+    title:"राष्ट्रिय क्रिकेट लिगमा युवा खेलाडीहरूको उल्लेखनीय प्रदर्शन",
+    summary:"चालु क्रिकेट लिगमा नयाँ पुस्ताका खेलाडीहरूले दर्शकको ध्यान आकर्षित गरेका छन्।",
+    body:[
+      "काठमाडौं — चालु राष्ट्रिय क्रिकेट लिगमा यस पटक थुप्रै युवा खेलाडीहरूले प्रभावशाली प्रदर्शन गर्दै आफ्नो उपस्थिति जनाएका छन्।",
+      "क्रिकेट संघका अधिकारीका अनुसार यसपालिको लिगले आगामी राष्ट्रिय टिम निर्माणमा समेत सहयोग पुर्‍याउने विश्वास लिइएको छ।",
+      "दर्शक संख्यामा पनि उल्लेख्य वृद्धि भएको र स्टेडियमहरूमा राम्रो चहलपहल रहेको आयोजकहरूले जनाएका छन्।"
+    ],
+    reporter:"विकास थापा",
+    publishDate:"2026-06-28",
+    featuredImage:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:8,
+    category:"स्थानीय",
+    title:"चितवनमा सामुदायिक वन संरक्षणले वन्यजन्तु संख्यामा वृद्धि",
+    summary:"स्थानीय सामुदायिक वन उपभोक्ता समूहहरूको संलग्नताले क्षेत्रमा जैविक विविधता संरक्षणमा उल्लेखनीय प्रगति देखिएको छ।",
+    body:[
+      "चितवन — जिल्लाका सामुदायिक वन उपभोक्ता समूहहरूको सक्रियताका कारण यस क्षेत्रमा वन्यजन्तुको संख्यामा क्रमिक वृद्धि भएको पछिल्लो सर्वेक्षणले देखाएको छ।",
+      "वन कार्यालयका अनुसार स्थानीयको सहभागितामा चलाइएको गस्ती व्यवस्था र सचेतना कार्यक्रमले अवैध शिकारी क्रियाकलापमा उल्लेख्य कमी ल्याएको छ।",
+      "यसै सफलतालाई हेरी छिमेकी जिल्लाहरूमा समेत यस्तै मोडेल लागू गर्ने तयारी भइरहेको सम्बन्धित निकायले जनाएको छ।"
+    ],
+    reporter:"पूजा गुरुङ",
+    publishDate:"2026-06-27",
+    featuredImage:"https://images.unsplash.com/photo-1550358864-518f202c02ba?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id:9,
+    category:"अन्तर्राष्ट्रिय",
+    title:"क्षेत्रीय व्यापार मेलामा नेपाली उद्यमीहरूको सशक्त सहभागिता",
+    summary:"छिमेकी मुलुकमा आयोजित व्यापार मेलामा नेपाली साना तथा मझौला उद्यमहरूले उत्पादन प्रदर्शन गरेका छन्।",
+    body:[
+      "दिल्ली — क्षेत्रीय स्तरमा आयोजित व्यापार मेलामा नेपालका दुई दर्जनभन्दा बढी साना तथा मझौला उद्यमीहरूले सहभागिता जनाएका छन्।",
+      "आयोजकका अनुसार हस्तकला, कृषि प्रशोधन तथा वस्त्र उत्पादनमा नेपाली स्टलहरूले विशेष आकर्षण पाएका छन्।",
+      "उद्यमीहरूले यस्ता मेलाले अन्तर्राष्ट्रिय बजारसम्म पहुँच बढाउन सघाउने र थप यस्ता अवसर खोजिनुपर्ने बताएका छन्।"
+    ],
+    reporter:"अनिल कार्की",
+    publishDate:"2026-06-26",
+    featuredImage:"https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop"
+  }
+];
+
+let activeCategory = "सबै";
+
+/* ---------- Admin (client-side only — see note below) ----------
+   This is a static site with no backend/server. This login only
+   controls what's shown in THIS browser tab; the password lives in
+   this file's source and is visible to anyone who views it, and any
+   article added here is stored in this browser's localStorage only —
+   it will not appear for other visitors of the live site. For a real
+   multi-user admin system, a backend + database (or a headless CMS)
+   is needed. */
+const ADMIN_USER = "admin";
+const ADMIN_PASS = "satishsah@123";
+let isAdmin = sessionStorage.getItem("sk_admin") === "1";
+
+(function loadExtraNews(){
+  try{
+    const extra = JSON.parse(localStorage.getItem("sk_extra_news") || "[]");
+    if(Array.isArray(extra) && extra.length) NEWS.unshift(...extra);
+  }catch(e){}
+
+  try{
+    const overrides = JSON.parse(localStorage.getItem("sk_overrides") || "{}");
+    NEWS.forEach(a=>{ if(overrides[a.id]) Object.assign(a, overrides[a.id]); });
+  }catch(e){}
+
+  try{
+    const deleted = JSON.parse(localStorage.getItem("sk_deleted") || "[]");
+    if(deleted.length){
+      const kept = NEWS.filter(a=>!deleted.includes(a.id));
+      NEWS.length = 0;
+      NEWS.push(...kept);
+    }
+  }catch(e){}
+})();
+
+function saveExtraNews(article){
+  try{
+    const extra = JSON.parse(localStorage.getItem("sk_extra_news") || "[]");
+    extra.unshift(article);
+    localStorage.setItem("sk_extra_news", JSON.stringify(extra));
+  }catch(e){}
+}
+
+function saveOverride(id, fields){
+  try{
+    const overrides = JSON.parse(localStorage.getItem("sk_overrides") || "{}");
+    overrides[id] = fields;
+    localStorage.setItem("sk_overrides", JSON.stringify(overrides));
+  }catch(e){}
+
+  // if this id belongs to a locally-added article, update it in sk_extra_news too
+  try{
+    const extra = JSON.parse(localStorage.getItem("sk_extra_news") || "[]");
+    const idx = extra.findIndex(a=>a.id===id);
+    if(idx>-1){ Object.assign(extra[idx], fields); localStorage.setItem("sk_extra_news", JSON.stringify(extra)); }
+  }catch(e){}
+}
+
+function saveDeleted(id){
+  try{
+    const deleted = JSON.parse(localStorage.getItem("sk_deleted") || "[]");
+    if(!deleted.includes(id)) deleted.push(id);
+    localStorage.setItem("sk_deleted", JSON.stringify(deleted));
+  }catch(e){}
+  try{
+    const extra = JSON.parse(localStorage.getItem("sk_extra_news") || "[]");
+    localStorage.setItem("sk_extra_news", JSON.stringify(extra.filter(a=>a.id!==id)));
+  }catch(e){}
+}
+
+function closeModal(){
+  document.getElementById("modalRoot").innerHTML = "";
+}
+
+function openLoginModal(){
+  document.getElementById("modalRoot").innerHTML = `
+    <div class="modal-overlay" onclick="if(event.target===this) closeModal()">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <h2>Admin लगइन</h2>
+        <label for="loginUser">Username</label>
+        <input id="loginUser" type="text" autocomplete="username">
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" autocomplete="current-password">
+        <div id="loginErr" class="modal-error"></div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="handleLogin()">लगइन गर्नुहोस्</button>
+          <button class="btn-ghost" onclick="closeModal()">रद्द गर्नुहोस्</button>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById("loginUser").focus();
+}
+
+function handleLogin(){
+  const u = document.getElementById("loginUser").value.trim();
+  const p = document.getElementById("loginPass").value;
+  if(u === ADMIN_USER && p === ADMIN_PASS){
+    isAdmin = true;
+    sessionStorage.setItem("sk_admin","1");
+    closeModal();
+    renderAdminBar();
+  } else {
+    document.getElementById("loginErr").textContent = "गलत username वा password।";
+  }
+}
+
+function logoutAdmin(){
+  isAdmin = false;
+  sessionStorage.removeItem("sk_admin");
+  renderAdminBar();
+}
+
+function renderAdminBar(){
+  const existing = document.getElementById("adminBar");
+  if(existing) existing.remove();
+  if(!isAdmin) return;
+  const bar = document.createElement("div");
+  bar.id = "adminBar";
+  bar.className = "admin-bar";
+  bar.innerHTML = `
+    <span>🔓 Admin मोड सक्रिय छ</span>
+    <div class="abar-actions">
+      <button onclick="openAddNewsModal()">+ नयाँ समाचार थप्नुहोस्</button>
+      <button onclick="openManageModal()">समाचार सम्पादन/मेट्नुहोस्</button>
+      <button onclick="logoutAdmin()">लगआउट</button>
+    </div>`;
+  document.body.insertBefore(bar, document.body.firstChild);
+}
+
+function openAddNewsModal(){
+  openArticleForm(null);
+}
+
+function openArticleForm(article){
+  if(!isAdmin) return;
+  const isEdit = !!article;
+  document.getElementById("modalRoot").innerHTML = `
+    <div class="modal-overlay" onclick="if(event.target===this) closeModal()">
+      <div class="modal-box wide">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <h2>${isEdit ? "समाचार सम्पादन गर्नुहोस्" : "नयाँ समाचार थप्नुहोस्"}</h2>
+        <label for="fTitle">शीर्षक</label>
+        <input id="fTitle" type="text" value="${isEdit ? escapeAttr(article.title) : ""}">
+        <label for="fCategory">श्रेणी</label>
+        <select id="fCategory">${CATEGORIES.filter(c=>c!=="सबै").map(c=>`<option value="${c}" ${isEdit && article.category===c ? "selected":""}>${c}</option>`).join("")}</select>
+        <label for="fSummary">संक्षिप्त विवरण</label>
+        <textarea id="fSummary" style="min-height:60px;">${isEdit ? escapeHTML(article.summary) : ""}</textarea>
+        <label for="fBody">पूरा समाचार (हरेक अनुच्छेद नयाँ लाइनमा)</label>
+        <textarea id="fBody" style="min-height:120px;">${isEdit ? escapeHTML(article.body.join("\n")) : ""}</textarea>
+        <label for="fReporter">रिपोर्टर</label>
+        <input id="fReporter" type="text" value="${isEdit ? escapeAttr(article.reporter) : ""}">
+        <label for="fImage">फोटो URL</label>
+        <input id="fImage" type="text" placeholder="https://..." value="${isEdit ? escapeAttr(article.featuredImage) : ""}">
+        <div id="addErr" class="modal-error"></div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="submitArticleForm(${isEdit ? article.id : "null"})">${isEdit ? "अपडेट गर्नुहोस्" : "प्रकाशित गर्नुहोस्"}</button>
+          <button class="btn-ghost" onclick="closeModal()">रद्द गर्नुहोस्</button>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById("fTitle").focus();
+}
+
+function escapeHTML(s){ return (s||"").replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+function escapeAttr(s){ return (s||"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+
+function submitArticleForm(editId){
+  const title = document.getElementById("fTitle").value.trim();
+  const category = document.getElementById("fCategory").value;
+  const summary = document.getElementById("fSummary").value.trim();
+  const bodyRaw = document.getElementById("fBody").value.trim();
+  const reporter = document.getElementById("fReporter").value.trim() || "SatiKhabar";
+  const image = document.getElementById("fImage").value.trim() || "https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=1200&auto=format&fit=crop";
+
+  if(!title || !summary || !bodyRaw){
+    document.getElementById("addErr").textContent = "शीर्षक, संक्षिप्त विवरण र पूरा समाचार आवश्यक छ।";
+    return;
+  }
+
+  const bodyArr = bodyRaw.split("\n").map(s=>s.trim()).filter(Boolean);
+
+  if(editId){
+    const existing = NEWS.find(a=>a.id===editId);
+    const fields = { title, category, summary, body:bodyArr, reporter, featuredImage:image };
+    if(existing) Object.assign(existing, fields);
+    saveOverride(editId, fields);
+  } else {
+    const newId = Date.now();
+    const article = {
+      id:newId, category, title, summary, body:bodyArr, reporter,
+      publishDate: new Date().toISOString().slice(0,10),
+      featuredImage: image
+    };
+    NEWS.unshift(article);
+    saveExtraNews(article);
+  }
+
+  closeModal();
+  renderHome();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function openManageModal(){
+  if(!isAdmin) return;
+  const sorted = [...NEWS].sort((a,b)=> new Date(b.publishDate)-new Date(a.publishDate));
+  document.getElementById("modalRoot").innerHTML = `
+    <div class="modal-overlay" onclick="if(event.target===this) closeModal()">
+      <div class="modal-box wide">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <h2>समाचार व्यवस्थापन</h2>
+        <div style="max-height:60vh;overflow-y:auto;">
+          ${sorted.map(a=>`
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);">
+              <div style="min-width:0;">
+                <div style="font-family:var(--display);font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeHTML(a.title)}</div>
+                <div style="font-family:var(--mono);font-size:11px;color:var(--slate);">${a.category} · ${formatDate(a.publishDate)}</div>
+              </div>
+              <div style="display:flex;gap:6px;flex:none;">
+                <button class="btn-ghost" style="padding:6px 10px;font-size:12.5px;" onclick='editFromManage(${a.id})'>सम्पादन</button>
+                <button class="btn-ghost" style="padding:6px 10px;font-size:12.5px;color:var(--sindoor);border-color:var(--sindoor);" onclick="deleteArticle(${a.id})">मेट्नुहोस्</button>
+              </div>
+            </div>`).join("")}
+        </div>
+        <div class="modal-actions">
+          <button class="btn-ghost" onclick="closeModal()">बन्द गर्नुहोस्</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function editFromManage(id){
+  const article = NEWS.find(a=>a.id===id);
+  if(article) openArticleForm(article);
+}
+
+function deleteArticle(id){
+  if(!confirm("यो समाचार मेट्ने निश्चित हुनुहुन्छ?")) return;
+  const idx = NEWS.findIndex(a=>a.id===id);
+  if(idx>-1) NEWS.splice(idx,1);
+  saveDeleted(id);
+  openManageModal();
+  renderHome();
+}
+
+function updateSEO(article){
+  if(!article) return;
+  const siteName = "SatiKhabar";
+  const baseURL = "https://satikhabar.netlify.app/";
+  const title = article.seoTitle || article.title;
+  const description = article.seoDesc || article.summary || article.subtitle || "";
+  const image = article.ogImage || article.featuredImage || baseURL + "og-image.jpg";
+  const url = baseURL + "?article=" + article.id;
+
+  document.title = title + " | " + siteName;
+  setMeta("description",description);
+  setMetaProperty("og:type","article");
+  setMetaProperty("og:title",title);
+  setMetaProperty("og:description",description);
+  setMetaProperty("og:image",image);
+  setMetaProperty("og:url",url);
+  setMetaProperty("og:site_name",siteName);
+  setMetaName("twitter:card","summary_large_image");
+  setMetaName("twitter:title",title);
+  setMetaName("twitter:description",description);
+  setMetaName("twitter:image",image);
+  document.querySelector("link[rel='canonical']").href = url;
+  generateSchema(article,url,image,title,description);
+}
+
+function resetHomeSEO(){
+  const baseURL = "https://satikhabar.netlify.app/";
+  document.title = "SatiKhabar | नेपालको भरपर्दो समाचार पोर्टल";
+  setMeta("description","SatiKhabar — राजनीति, अर्थतन्त्र, खेलकुद, स्थानीय र अन्तर्राष्ट्रिय समाचार एकै ठाउँमा।");
+  setMetaProperty("og:type","website");
+  setMetaProperty("og:title",document.title);
+  setMetaProperty("og:url",baseURL);
+  document.querySelector("link[rel='canonical']").href = baseURL;
+}
+
+function setMeta(name,value){
+  let tag=document.querySelector(`meta[name="${name}"]`);
+  if(!tag){tag=document.createElement("meta");tag.setAttribute("name",name);document.head.appendChild(tag);}
+  tag.content=value;
+}
+function setMetaName(name,value){ setMeta(name,value); }
+function setMetaProperty(property,value){
+  let tag=document.querySelector(`meta[property="${property}"]`);
+  if(!tag){tag=document.createElement("meta");tag.setAttribute("property",property);document.head.appendChild(tag);}
+  tag.content=value;
+}
+function generateSchema(article,url,image,title,description){
+  const schema={
+    "@context":"https://schema.org","@type":"NewsArticle",
+    "headline":title,"description":description,"image":[image],
+    "datePublished":article.publishDate,"dateModified":article.updatedDate || article.publishDate,
+    "author":{"@type":"Person","name":article.reporter},
+    "publisher":{"@type":"Organization","name":"SatiKhabar","logo":{"@type":"ImageObject","url":"https://satikhabar.netlify.app/logo.png"}},
+    "mainEntityOfPage":{"@type":"WebPage","@id":url}
+  };
+  document.getElementById("jsonld-schema").textContent = JSON.stringify(schema);
+}
+
+function garlandHTML(){
+  let s='<div class="garland" aria-hidden="true">';
+  for(let i=0;i<11;i++) s+='<span></span>';
+  return s+'</div>';
+}
+
+function cardHTML(article, variant){
+  const tagClass = article.category==="अन्तर्राष्ट्रिय" ? "blue" : (article.category==="खेलकुद" ? "gold" : "");
+  if(variant==="feature"){
+    return `<article class="story-feature" onclick="openArticle(${article.id})">
+      <div class="thumb"><img src="${article.featuredImage}" alt="${article.title}" loading="lazy" decoding="async"></div>
+      <span class="tag-pill ${tagClass}">${article.category}</span>
+      <h2>${article.title}</h2>
+      <p class="summary">${article.summary}</p>
+      <div class="meta-row"><span>${article.reporter}</span><span>${formatDate(article.publishDate)}</span></div>
+    </article>`;
+  }
+  if(variant==="side"){
+    return `<article class="side-item" onclick="openArticle(${article.id})">
+      <div class="thumb"><img src="${article.featuredImage}" alt="${article.title}" loading="lazy" decoding="async"></div>
+      <div>
+        <span class="tag-pill ${tagClass}">${article.category}</span>
+        <h3>${article.title}</h3>
+        <div class="meta-row"><span>${formatDate(article.publishDate)}</span></div>
+      </div>
+    </article>`;
+  }
+  return `<article class="card" onclick="openArticle(${article.id})">
+    <div class="thumb"><img src="${article.featuredImage}" alt="${article.title}" loading="lazy" decoding="async"></div>
+    <span class="tag-pill ${tagClass}">${article.category}</span>
+    <h3>${article.title}</h3>
+    <p class="summary">${article.summary}</p>
+    <div class="meta-row"><span>${article.reporter}</span><span>${formatDate(article.publishDate)}</span></div>
+  </article>`;
+}
+
+function formatDate(d){
+  const date=new Date(d);
+  return date.toLocaleDateString("ne-NP",{year:"numeric",month:"short",day:"numeric"});
+}
+
+function renderNav(){
+  const nav=document.getElementById("navInner");
+  nav.innerHTML = CATEGORIES.map(c=>
+    `<button class="nav-btn ${c===activeCategory?'active':''}" onclick="setCategory('${c}')">${c}</button>`
+  ).join("");
+}
+
+function setCategory(cat){
+  activeCategory=cat;
+  renderNav();
+  renderHome();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function renderHome(){
+  history.replaceState({},"","./");
+  resetHomeSEO();
+  renderNav();
+
+  const list = activeCategory==="सबै" ? NEWS : NEWS.filter(n=>n.category===activeCategory);
+  const sorted = [...list].sort((a,b)=> new Date(b.publishDate)-new Date(a.publishDate));
+  const feature = sorted[0];
+  const sideItems = sorted.slice(1,4);
+  const rest = sorted.slice(4);
+
+  let html = "";
+
+  if(feature){
+    html += `<section class="hero">
+      ${cardHTML(feature,"feature")}
+      <div class="side-list">${sideItems.map(a=>cardHTML(a,"side")).join("")}</div>
+    </section>`;
+  } else {
+    html += `<p style="color:var(--slate);padding:40px 0;text-align:center;">यस विभागमा हाल कुनै समाचार छैन।</p>`;
+  }
+
+  if(rest.length){
+    html += `${garlandHTML()}
+    <section class="section">
+      <div class="section-head"><h2>थप समाचार</h2><div class="rule"></div></div>
+      <div class="grid">${rest.map(a=>cardHTML(a,"card")).join("")}</div>
+    </section>`;
+  }
+
+  document.getElementById("mainContent").innerHTML = html;
+}
+
+function openArticle(id){
+  const article = NEWS.find(x=>x.id==id);
+  if(!article) return;
+  updateSEO(article);
+  history.pushState({},"", "?article="+article.id);
+
+  const tagClass = article.category==="अन्तर्राष्ट्रिय" ? "blue" : (article.category==="खेलकुद" ? "gold" : "");
+  const related = NEWS.filter(n=>n.category===article.category && n.id!==article.id).slice(0,3);
+
+  document.getElementById("mainContent").innerHTML = `
+    <div class="article-view">
+      <button class="back-btn" onclick="goHome()">← गृहपृष्ठमा फर्कनुहोस्</button>
+      <span class="tag-pill ${tagClass}">${article.category}</span>
+      <h1>${article.title}</h1>
+      <div class="meta-row"><span>${article.reporter}</span><span>${formatDate(article.publishDate)}</span></div>
+      <div class="article-thumb" style="margin-top:16px;"><img src="${article.featuredImage}" alt="${article.title}"></div>
+      <div class="body-text">${article.body.map(p=>`<p>${p}</p>`).join("")}</div>
+      <div class="article-toolbar">
+        <span class="meta-row">रिपोर्टर: ${article.reporter}</span>
+        <button class="share-btn" onclick='shareArticle(${JSON.stringify(article).replace(/'/g,"&apos;")})'>सेयर गर्नुहोस्</button>
+      </div>
+    </div>
+    ${related.length ? `${garlandHTML()}<section class="section"><div class="section-head"><h2>सम्बन्धित समाचार</h2><div class="rule"></div></div><div class="grid">${related.map(a=>cardHTML(a,"card")).join("")}</div></section>` : ""}
+  `;
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function goHome(){
+  history.pushState({},"","./");
+  renderHome();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shareArticle(article){
+  const url = "https://satikhabar.netlify.app/?article="+article.id;
+  if(navigator.share){
+    navigator.share({title:article.title,text:article.summary,url:url});
+  } else {
+    navigator.clipboard.writeText(url);
+    alert("लिंक कपी भयो: "+url);
+  }
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("todayDate").textContent = new Date().toLocaleDateString("ne-NP",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+
+window.addEventListener("load",()=>{
+  renderAdminBar();
+  const params = new URLSearchParams(location.search);
+  const id = params.get("article");
+  if(id){ openArticle(id); } else { renderHome(); }
+});
+
+window.addEventListener("popstate",()=>{
+  const params = new URLSearchParams(location.search);
+  const id = params.get("article");
+  if(id){ openArticle(id); } else { renderHome(); }
+});
+</script>
+</body>
+</html>
